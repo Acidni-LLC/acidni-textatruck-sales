@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Features" description="Text-a-Truck features: SMS intake, voice reporting, AI extraction, real-time dashboard, and instant responder alerts.">
+  <section class="py-24 bg-gradient-to-br from-orange-50 to-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-6">Platform Features</h1>
+      <p class="text-xl text-gray-500 max-w-3xl mx-auto">
+        Every channel, every device, every hazard type — one unified platform for road safety reporting.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {[
+          { icon: '💬', title: 'SMS Intake', desc: 'Citizens send a text to a dedicated number. No smartphone, no app, no internet required — just basic SMS. Our pipeline parses the free-form message, extracts entities, and creates a structured incident record within milliseconds.' },
+          { icon: '📞', title: 'Voice IVR Reporting', desc: 'Callers are guided through a structured IVR flow powered by Azure Communication Services. Speech-to-text converts the spoken report into a structured hazard record. Perfect for drivers who cannot type while on the road.' },
+          { icon: '🌐', title: 'Web Form Submission', desc: 'A mobile-responsive web form allows structured reports with optional photo uploads. Ideal for detailed submissions from pedestrians, cyclists, or citizens reporting from home.' },
+          { icon: '🤖', title: 'AI-Powered Extraction', desc: 'Azure AI services extract location (address, cross street, GPS), hazard type (pothole, debris, flooding, etc.), severity level, and urgency from unstructured text — handling abbreviations and informal language automatically.' },
+          { icon: '🗺️', title: 'Live Incident Dashboard', desc: 'A real-time map displays all active reports. Filter by hazard type, severity, status, or area. Responders see their assigned incidents with routing and priority queue.' },
+          { icon: '🔔', title: 'Automated Dispatch Alerts', desc: 'Instant notifications are sent to the responsible crew or agency based on geographic zone and hazard type. Integrates with email, SMS, and webhook endpoints for existing dispatch systems.' },
+          { icon: '📊', title: 'Analytics & Reporting', desc: 'Track report volume, response times, recurring hazard locations, and resolution rates. Export data for monthly reporting and infrastructure planning.' },
+          { icon: '🔒', title: 'Enterprise Security', desc: 'Built on Azure with managed identity, encrypted data at rest and in transit, RBAC, and full audit logging. Meets requirements for government and municipal deployments.' },
+        ].map(({ icon, title, desc }) => (
+          <div class="flex gap-6">
+            <div class="text-4xl flex-shrink-0">{icon}</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+              <p class="text-gray-500 leading-relaxed">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-orange-600 text-white text-center">
+    <h2 class="text-3xl font-bold mb-4">See It In Action</h2>
+    <p class="text-orange-100 mb-8">Get started free — no credit card needed.</p>
+    <a href="https://textatruck.acidni.net/signup" class="inline-flex items-center px-8 py-4 font-bold text-orange-600 bg-white rounded-xl hover:bg-orange-50 transition-all">
+      Get Started Free →
+    </a>
+  </section>
+</Layout>

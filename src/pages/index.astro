@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Report Road Hazards Instantly by Text">
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-amber-50 py-24 lg:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-sm font-semibold px-4 py-2 rounded-full mb-6">
+        🚦 Road Safety Made Simple
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+        Report Road Hazards<br />
+        <span class="text-orange-600">With a Single Text</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+        Text-a-Truck is the fastest way to report potholes, debris, accidents, and road hazards.
+        SMS, voice call, or web form — one platform, instant routing to the right responders.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://textatruck.acidni.net/signup"
+          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-orange-600 rounded-xl hover:bg-orange-700 transition-all shadow-lg hover:shadow-xl"
+        >
+          Get Started Free →
+        </a>
+        <a
+          href="/how-it-works"
+          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-700 bg-white border-2 border-gray-200 rounded-xl hover:border-gray-300 transition-all"
+        >
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Summary -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Report in 3 Simple Steps</h2>
+      <p class="text-center text-gray-500 mb-14 max-w-2xl mx-auto">Any channel, any device. No app download required.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {[
+          { step: '01', icon: '📱', title: 'Text, Call, or Submit', desc: 'Send a text to your local number, call in your report, or use the web form — whatever is easiest.' },
+          { step: '02', icon: '⚡', title: 'Instant Processing', desc: 'Our AI extracts location, hazard type, and severity. The report is validated and categorized in seconds.' },
+          { step: '03', icon: '🎯', title: 'Routed to Responders', desc: 'The right agency or crew is notified immediately. You receive a tracking reference in return.' },
+        ].map(({ step, icon, title, desc }) => (
+          <div class="text-center">
+            <div class="text-4xl mb-4">{icon}</div>
+            <div class="text-xs font-bold text-orange-500 tracking-widest mb-2">STEP {step}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+            <p class="text-gray-500 leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Everything You Need</h2>
+      <p class="text-center text-gray-500 mb-14 max-w-2xl mx-auto">A complete platform for municipalities, DOTs, and fleet operators.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: '💬', title: 'SMS Intake', desc: 'Citizens text hazard reports directly — no app install needed.' },
+          { icon: '📞', title: 'Voice Reporting', desc: 'IVR-guided voice reports via Azure Communication Services.' },
+          { icon: '🌐', title: 'Web Form', desc: 'Structured online submissions with photo upload support.' },
+          { icon: '🤖', title: 'AI Extraction', desc: 'Automatically parses location, hazard type, and severity from unstructured text.' },
+          { icon: '🗺️', title: 'Real-time Dashboard', desc: 'Live map view of all active hazard reports with status tracking.' },
+          { icon: '🔔', title: 'Instant Alerts', desc: 'Notifications sent immediately to the crew or agency responsible for the area.' },
+        ].map(({ icon, title, desc }) => (
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-4">{icon}</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{title}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-12">Built for Real Roads</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {[
+          { metric: '< 5s', label: 'Average report processing time' },
+          { metric: '3+', label: 'Intake channels supported' },
+          { metric: '24/7', label: 'Always-on hazard intake' },
+        ].map(({ metric, label }) => (
+          <div>
+            <div class="text-4xl font-extrabold text-orange-600 mb-2">{metric}</div>
+            <div class="text-gray-500 text-sm">{label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (GEO Optimization) -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        {[
+          { q: 'How do I report a road hazard with Text-a-Truck?', a: 'Simply text a description of the hazard to your local Text-a-Truck number. You can include the location, hazard type, and any relevant details. You\'ll receive a confirmation with a tracking reference number within seconds.' },
+          { q: 'Do I need to download an app to use Text-a-Truck?', a: 'No app download is required. Text-a-Truck works via SMS, phone call, or web browser — no installation needed.' },
+          { q: 'Who receives the hazard reports?', a: 'Reports are automatically routed to the appropriate agency based on location and hazard type. This could be a municipal road crew, state DOT, or fleet dispatch team.' },
+          { q: 'What types of hazards can be reported?', a: 'Text-a-Truck supports reporting of potholes, road debris, downed trees, traffic signal outages, flooding, accidents, and more.' },
+          { q: 'Is Text-a-Truck available for municipalities and fleet operators?', a: 'Yes. Text-a-Truck offers plans for individual users, municipalities, and fleet operators. Contact us to discuss a customized deployment for your organization.' },
+        ].map(({ q, a }) => (
+          <details class="bg-white rounded-xl border border-gray-100 p-6 cursor-pointer group">
+            <summary class="font-semibold text-gray-900 list-none flex items-center justify-between gap-4">
+              {q}
+              <span class="text-gray-400 group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <p class="mt-4 text-gray-500 leading-relaxed">{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How do I report a road hazard with Text-a-Truck?", "acceptedAnswer": { "@type": "Answer", "text": "Simply text a description of the hazard to your local Text-a-Truck number. You can include the location, hazard type, and any relevant details. You'll receive a confirmation with a tracking reference number within seconds." } },
+          { "@type": "Question", "name": "Do I need to download an app to use Text-a-Truck?", "acceptedAnswer": { "@type": "Answer", "text": "No app download is required. Text-a-Truck works via SMS, phone call, or web browser — no installation needed." } },
+          { "@type": "Question", "name": "Who receives the hazard reports?", "acceptedAnswer": { "@type": "Answer", "text": "Reports are automatically routed to the appropriate agency based on location and hazard type." } }
+        ]
+      }
+    </script>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-orange-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-extrabold mb-4">Ready to Protect Your Roads?</h2>
+      <p class="text-orange-100 text-xl mb-10">Get started in minutes. No credit card required.</p>
+      <a
+        href="https://textatruck.acidni.net/signup"
+        class="inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-orange-600 bg-white rounded-xl hover:bg-orange-50 transition-all shadow-xl"
+      >
+        Start Reporting Free →
+      </a>
+    </div>
+  </section>
+</Layout>

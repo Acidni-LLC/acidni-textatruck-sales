@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="How It Works" description="Learn how Text-a-Truck processes road hazard reports via SMS, voice, and web across three simple steps.">
+  <section class="py-24 bg-gradient-to-br from-orange-50 to-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-6">How Text-a-Truck Works</h1>
+      <p class="text-xl text-gray-500 max-w-3xl mx-auto">
+        From hazard report to dispatched crew in under 10 seconds.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16">
+        {[
+          {
+            step: '1',
+            title: 'A Driver Spots a Hazard',
+            desc: 'A driver notices a pothole, debris in the road, or downed sign. They text a short description to their local Text-a-Truck number — while staying safely pulled over, or by voice call if hands-free is a priority.',
+            detail: 'Example text: "Large pothole corner of Main & 5th, almost lost a tire"',
+          },
+          {
+            step: '2',
+            title: 'AI Parses the Report',
+            desc: 'Within milliseconds, Azure AI services extract structured data from the message: location (geocoded to coordinates), hazard type (pothole), severity (large), and keywords. No manual data entry required.',
+            detail: 'Extracted: { location: "Main St & 5th Ave", type: "pothole", severity: "large", confidence: 0.96 }',
+          },
+          {
+            step: '3',
+            title: 'Report Is Validated and Stored',
+            desc: 'The structured record is validated, assigned a unique incident ID (e.g., TAT-20260224-0042), and stored. The reporter receives an SMS confirmation with their tracking number.',
+            detail: 'SMS back: "Report received! TAT-20260224-0042 — Pothole at Main & 5th. Crew notified."',
+          },
+          {
+            step: '4',
+            title: 'Right Responder Gets Notified',
+            desc: 'Based on the location and jurisdiction rules, the responsible road crew, municipality, or fleet dispatcher is alerted via SMS, email, or webhook integration with their existing dispatch system.',
+            detail: 'Dispatch alert: "New HIGH priority hazard in Zone 3 — Pothole, Main & 5th. Tap to view map."',
+          },
+          {
+            step: '5',
+            title: 'Hazard Is Tracked to Resolution',
+            desc: 'The crew updates the status as they respond. The dashboard shows live status changes. When resolved, the original reporter optionally receives a closure notification.',
+            detail: 'Resolution: "TAT-20260224-0042 — Closed. Crew repaired pothole at 14:32. Thank you for reporting!"',
+          },
+        ].map(({ step, title, desc, detail }) => (
+          <div class="flex gap-8">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-600 text-white font-extrabold text-xl flex items-center justify-center">
+              {step}
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+              <p class="text-gray-500 leading-relaxed mb-3">{desc}</p>
+              <code class="text-xs bg-gray-50 border border-gray-100 rounded-lg px-4 py-3 block text-gray-600 font-mono">{detail}</code>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-orange-600 text-white text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+    <p class="text-orange-100 mb-8">Set up your intake in minutes.</p>
+    <a href="https://textatruck.acidni.net/signup" class="inline-flex items-center px-8 py-4 font-bold text-orange-600 bg-white rounded-xl hover:bg-orange-50 transition-all">
+      Start Free →
+    </a>
+  </section>
+</Layout>
